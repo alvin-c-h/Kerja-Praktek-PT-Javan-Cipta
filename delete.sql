@@ -1,0 +1,1 @@
+DELETE FROM karyawan WHERE MONTH(tanggal_masuk)=9;
