@@ -8,36 +8,34 @@ function kalkulatorSederhana($inputHuruf){
 
     $calculate=explode("+",$inputHuruf);
 
-    if (count($calculate)==1){
+    if (count($calculate)>1){
+        $hasil=(float)$calculate[0]+(float)$calculate[1];
+        echo $hasil;
+    }
+    else{
         $calculate=explode("-",$inputHuruf);
-    }
-    else{
-        $hasil=(int)$calculate[0]+(int)$calculate[1];
-        echo $hasil;
-    }
-
-    if (count($calculate)==1){
-        $calculate=explode("x",$inputHuruf);
-    }
-    else{
-        $hasil=(int)$calculate[0]-(int)$calculate[1];
-        echo $hasil;
-    }
-
-    if (count($calculate)==1){
-        $calculate=explode("/",$inputHuruf);
         if (count($calculate)>1){
-            if ((int)$calculate[1]==0){
-                echo "tidak bisa dilakukan";
-            }
-            else{
-                $hasil=(int)$calculate[0]/(int)$calculate[1];
-                echo $hasil;
-            }
+            $hasil=(float)$calculate[0]-(float)$calculate[1];
+            echo $hasil;
         }
         else{
-            $hasil=(int)$calculate[0]*(int)$calculate[1];
-            echo $hasil;
+            $calculate=explode("x",$inputHuruf);
+            if (count($calculate)>1){
+                $hasil=(float)$calculate[0]*(float)$calculate[1];
+                echo $hasil;
+            }
+            else{
+                $calculate=explode("/",$inputHuruf);
+                if (count($calculate)>1){
+                    if ((float)$calculate[1]==0){
+                        echo "tidak bisa dilakukan";
+                    }
+                    else{
+                        $hasil=(float)$calculate[0]/(float)$calculate[1];
+                        echo $hasil;
+                    }
+                }
+            }
         }
     }
 }
