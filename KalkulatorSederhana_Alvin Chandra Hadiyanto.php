@@ -35,12 +35,11 @@ function kalkulatorSederhana($inputHuruf){
                 echo $hasil;
             }
         }
+        else{
+            $hasil=(int)$calculate[0]*(int)$calculate[1];
+            echo $hasil;
+        }
     }
-    else{
-        $hasil=(int)$calculate[0]*(int)$calculate[1];
-        echo $hasil;
-    }
-
 }
 
 kalkulatorSederhana("2 / 0");
