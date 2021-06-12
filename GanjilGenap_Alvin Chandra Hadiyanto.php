@@ -3,7 +3,7 @@
 
 function ganjilGenap($firstNum,$lastNum){
     for ($x = $firstNum; $x <= $lastNum; $x = $x + 1) {
-        if ($x%2==1){
+        if (($x%2==1) OR ($x%2==-1)){
             echo "Angka $x adalah ganjil";
         }
         else{
