@@ -50,6 +50,7 @@ function hitungVokal($word){
             }
         }
         $listVocal=array_unique($listVocal);
+        $listVocal=array_values($listVocal);
 
         for ($x = 0; $x < count($listVocal); $x++) {
             echo $listVocal[$x];
